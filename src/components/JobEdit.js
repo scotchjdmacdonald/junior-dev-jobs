@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
-import update from 'react-addons-update';
+import { connect } from 'react-redux';
 import { Link } from 'react-router';
 
-export default class JobEdit extends Component {
+class JobEdit extends Component {
 
   componentDidMount() {
     // this.loadData();
   }
 
   render() {
+    const { job } = this.props;
+    console.log(job);
     return (
       <h2>View Job</h2>
     );
@@ -16,4 +18,11 @@ export default class JobEdit extends Component {
 }
 
 JobEdit.propTypes = {};
+
+export default connect((state, props) => {
+  const { match } = props;
+  return {
+    job: state.jobs.find(job => job._id === match.params.jobId)
+  }
+})(JobEdit);
 

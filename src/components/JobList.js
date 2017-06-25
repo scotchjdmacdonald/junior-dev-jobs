@@ -1,6 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 
+import { Link } from 'react-router-dom';
+
 import { FETCH_JOBS } from '../constants/actions';
 
 class JobList extends Component {
@@ -17,9 +19,11 @@ class JobList extends Component {
       <div>
         <h1>JuniorDev Jobs</h1>
         <ul>
-          {jobs.map(job => {
-            return <li key={job._id}> job._id </li>
-          })}
+          {jobs 
+          ? jobs.map(job => {
+            return <li key={job._id}><Link  to={`/jobs/${job._id}`}>job._id</Link></li>
+          })
+          : <h2>no jobs listed</h2>}
         </ul>
       </div>
     );
