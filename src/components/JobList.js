@@ -12,16 +12,28 @@ class JobList extends Component {
   }
 
   render() {
+    const { jobs } = this.props;
     return (
       <div>
         <h1>JuniorDev Jobs</h1>
+        <ul>
+          {jobs.map(job => {
+            return <li key={job._id}> job._id </li>
+          })}
+        </ul>
       </div>
     );
   }
 }
 
+JobList.PropTypes = {
+  dispatch: PropTypes.func,
+  jobs: PropTypes.array
+}
+
 export default connect(state => {
   return {
-    dispatch: state.dispatch
+    dispatch: state.dispatch,
+    jobs: state.jobs
   }
 })(JobList);
