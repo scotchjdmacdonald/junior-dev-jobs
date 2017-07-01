@@ -7,7 +7,7 @@ import { Provider } from 'react-redux';
 import configureStore from './store/configureStore';
 
 import JobList from './components/JobList.js';
-import JobEdit from './components/JobEdit.js';
+import JobView from './components/JobView.js';
 import JobAdd from './components/JobAdd.js';
 
 let store = configureStore();
@@ -19,12 +19,6 @@ render((
       <BrowserRouter>
         <Container />
       </BrowserRouter>
-      {/*<Router history={hashHistory} >
-        <Route path="/jobs" component={JobList} />
-        <Route path="/jobs/:id" component={JobEdit} />
-        <Redirect from="/" to="/jobs" />
-        <Route path="*" component={NoMatch} />
-      </Router>*/}
     </Provider>
   ),document.getElementById('app'));
 
@@ -43,7 +37,7 @@ function Container(props) {
       )} />
       <Route exact path="/" component={JobList} />
       <Route exact path="/jobs/add" component={JobAdd} />
-      <Route exact path="/jobs/view/:jobId" component={JobEdit} />
+      <Route exact path="/jobs/view/:jobId" component={JobView} />
     </div>
   );
 }

@@ -13,13 +13,6 @@ export function* fetchJobs() {
 export function* addJob(data) {
     const { title, description } = data.payload;
     const job = { title, description };
-    const receivedData = yield call(postApiData, '/api/jobs', JSON.stringify(job));
-    console.log('receivedData ', receivedData);
-}
-
-export function* updateJob(data) {
-    const { title, description } = data.payload;
-    const job = { title, description };
-    const receivedData = yield call(patchApiData, '/api/jobs', JSON.stringify(job));
+    const receivedData = yield call(postApiData, '/api/jobs', job);
     console.log('receivedData ', receivedData);
 }

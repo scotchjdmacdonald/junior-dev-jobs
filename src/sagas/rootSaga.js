@@ -6,5 +6,4 @@ import { fetchJobs, addJob, updateJob } from './jobs';
 export default function* rootSaga() {
     yield takeEvery(FETCH_JOBS, fetchJobs);
     yield takeEvery(ADD_JOB, addJob);
-    yield takeEvery(UPDATE_JOB, updateJob);
 }
