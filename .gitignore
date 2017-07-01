@@ -3,3 +3,4 @@ package-lock.json
 public/app.bundle.*
 /build
 build_and_deploy.*
+.vscode/settings.json
