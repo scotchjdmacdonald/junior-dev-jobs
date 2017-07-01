@@ -17,11 +17,11 @@ class JobList extends Component {
         <ul>
           {jobs 
           ? jobs.map(job => {
-            <li key={job._id}>
-              <Link  to={`/jobs/view/${job._id}`}>
-                {job.title}
-              </Link>
-            </li>
+            return <li key={job._id}>
+                     <Link  to={`/jobs/view/${job._id}`}>
+                       {job.title}
+                     </Link>
+                   </li>
           })
           : <h2>no jobs listed</h2>}
         </ul>
