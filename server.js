@@ -69,3 +69,13 @@ app.put('/api/jobs/:id', function(req, res) {
     });
   });
 });
+
+// delete all
+// app.delete('/api/jobs/:id', function(req, res) {
+//   console.log('Deleting job:', req.params.id);
+//   let oid = ObjectId(req.params.id);
+
+//   db.collection("juniordevjobs").remove({}).then((err, doc) => {
+//     res.send(doc);
+//   });
+// });
