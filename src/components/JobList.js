@@ -1,5 +1,6 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { FETCH_JOBS } from '../constants/actions';
 
@@ -14,17 +15,16 @@ class JobList extends Component {
     const { jobs } = this.props;
     return (
       <div>
-        <ul>
           {jobs 
           ? jobs.map(job => {
-            return <li key={job._id}>
+            return <div key={job._id}
+                        className="jd-job-list-item">
                      <Link  to={`/jobs/view/${job._id}`}>
                        {job.title}
                      </Link>
-                   </li>
+                   </div>
           })
           : <h2>no jobs listed</h2>}
-        </ul>
       </div>
     );
   }

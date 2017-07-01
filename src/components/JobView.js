@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 class JobView extends Component {
   render() {
@@ -7,16 +8,19 @@ class JobView extends Component {
     
     return (
       <div>
-        <ul>
-          <li>{job.title}</li>
-          <li>{job.description}</li>
-        </ul>
+          <div>Job title</div>
+          <div>{job.title}</div>
+
+          <div>Job description</div>
+          <div>{job.description}</div>
       </div>
     );
   }
 }
 
-JobView.propTypes = {};
+JobView.propTypes = {
+  job: PropTypes.object
+};
 
 export default connect((state, props) => {
   const { match } = props;

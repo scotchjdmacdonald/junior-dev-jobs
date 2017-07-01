@@ -25,16 +25,21 @@ render((
 function Container(props) {
   return (
     <div>
-      <h1>JuniorDev Jobs</h1>
-      <Route path="/jobs/" render={() => (
-         <Link to={`/`}><h2>back</h2></Link>
-      )} />
-      <Route exact path="/" render={() => (
-        <Link to={`/jobs/add`}><h2>Add</h2></Link>
-      )} />
-      <Route exact path="/jobs/add" render={() => (
-        <h2>Submit</h2>
-      )} />
+      <header>
+        <div className="jd-page-title">
+          Jobs
+        </div>
+        <Route path="/jobs/" render={() => (
+          <Link to={`/`}>
+            <div className="jd-button">back</div>
+          </Link>
+        )} />
+        <Route exact path="/" render={() => (
+          <Link to={`/jobs/add`}>
+            <div className="jd-button">Add</div>
+          </Link>
+        )} />
+      </header>
       <Route exact path="/" component={JobList} />
       <Route exact path="/jobs/add" component={JobAdd} />
       <Route exact path="/jobs/view/:jobId" component={JobView} />

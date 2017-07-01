@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { ADD_JOB } from '../constants/actions';
 
 class JobAdd extends Component {
@@ -22,34 +23,35 @@ class JobAdd extends Component {
     const { dispatch } = this.props;
 
     dispatch({ type: ADD_JOB, payload: this.state });
-
-    event.preventDefault();
   }
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          <input 
-            type="text"
-            name="title" 
-            value={this.state.title} 
-            onChange={this.handleChange} />
-        </label>
-        <label>
-          <input 
-            type="text"
-            name="description" 
-            value={this.state.description} 
-            onChange={this.handleChange} />
-        </label>
-        <input type="submit" value="Submit" />
-      </form>
+      <div>
+        <input 
+          type="text"
+          name="title" 
+          value={this.state.title} 
+          onChange={this.handleChange} />
+      
+        <input 
+          type="text"
+          name="description" 
+          value={this.state.description} 
+          onChange={this.handleChange} />
+        
+        <div onClick={this.handleSubmit}
+             className="jd-submit-button">
+          Add job
+        </div>
+      </div>
     );
   }
 }
 
-JobAdd.propTypes = {};
+JobAdd.propTypes = {
+  dispatch: PropTypes.func
+};
 
 export default connect(state => {
   return {
