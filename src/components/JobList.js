@@ -17,11 +17,10 @@ class JobList extends Component {
     const { jobs } = this.props;
     return (
       <div>
-        <h1>JuniorDev Jobs</h1>
         <ul>
           {jobs 
           ? jobs.map(job => {
-            return <li key={job._id}><Link  to={`/jobs/${job._id}`}>job._id</Link></li>
+            return <li key={job._id}><Link  to={`/jobs/view/${job._id}`}>job._id</Link></li>
           })
           : <h2>no jobs listed</h2>}
         </ul>

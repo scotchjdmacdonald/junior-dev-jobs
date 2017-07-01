@@ -7,3 +7,19 @@ export const getApiData = url => {
                 return response.data;
             });
 }
+
+export const patchApiData = (url, data) => {
+    return axios
+            .patch(url, data)
+            .then(response => {
+                return response.data;
+            });
+}
+
+export const postApiData = (url, data) => {
+    return axios
+            .post(url, data)
+            .then(response => {
+                return response.data;
+            });
+}
