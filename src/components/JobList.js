@@ -1,12 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-
 import { Link } from 'react-router-dom';
-
 import { FETCH_JOBS } from '../constants/actions';
 
 class JobList extends Component {
-
   componentDidMount() {
     const { dispatch } = this.props;
 
@@ -20,7 +17,11 @@ class JobList extends Component {
         <ul>
           {jobs 
           ? jobs.map(job => {
-            return <li key={job._id}><Link  to={`/jobs/view/${job._id}`}>job._id</Link></li>
+            <li key={job._id}>
+              <Link  to={`/jobs/view/${job._id}`}>
+                {job.title}
+              </Link>
+            </li>
           })
           : <h2>no jobs listed</h2>}
         </ul>
