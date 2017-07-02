@@ -5,6 +5,8 @@ let bodyParser = require('body-parser');
 let MongoClient = require('mongodb').MongoClient;
 let ObjectId = require('mongodb').ObjectID;
 
+const path = require('path');
+
 let app = express();
 let db;
 
@@ -68,6 +70,10 @@ app.put('/api/jobs/:id', function(req, res) {
       res.send(doc);
     });
   });
+});
+
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
 });
 
 // delete all

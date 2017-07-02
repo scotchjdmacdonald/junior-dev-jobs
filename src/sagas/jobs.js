@@ -7,7 +7,15 @@ export function* fetchJobs() {
     yield put({
         type: SET_JOBS,
         payload: receivedData
-    })
+    });
+};
+
+export function* fetchSingleJob(data) {
+    const receivedData = yield call(getApiData, `/api/jobs/${data.payload.id}`)
+    yield put({
+        type: SET_JOBS,
+        payload: [ receivedData ]
+    });
 };
 
 export function* addJob(data) {
@@ -15,4 +23,4 @@ export function* addJob(data) {
     const job = { title, description };
     const receivedData = yield call(postApiData, '/api/jobs', job);
     console.log('receivedData ', receivedData);
-}
+};
