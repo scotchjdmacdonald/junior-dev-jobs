@@ -6,6 +6,7 @@
     "webpack": "webpack",
     "webpack-watch": "webpack --watch",
     "test": "karma start karma.config.js",
+    "test:watch": "karma start karma.config.js --watch",
     "lint": "eslint 'src/*.js'"
   },
   "author": "JuniorDev",
