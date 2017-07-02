@@ -23,6 +23,11 @@ class JobAdd extends Component {
     const { dispatch } = this.props;
 
     dispatch({ type: ADD_JOB, payload: this.state });
+
+    this.setState({
+      title: '',
+      description: ''
+    });
   }
 
   render() {
