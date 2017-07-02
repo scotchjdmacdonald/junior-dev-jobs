@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { ADD_JOB } from '../constants/actions';
+import { ADD_JOB, REMOVE_MESSAGE } from '../constants/actions';
 
 class JobAdd extends Component {
   constructor(props) {
@@ -14,9 +14,14 @@ class JobAdd extends Component {
   }
 
   handleChange = (event) => {
+    const { message, dispatch } = this.props;
     this.setState({
       [event.target.name]: event.target.value
     });
+
+    if (message.content) {
+      dispatch({ type: REMOVE_MESSAGE });
+    }
   }
 
   handleSubmit = (event) => {
@@ -31,6 +36,7 @@ class JobAdd extends Component {
   }
 
   render() {
+    const { message } = this.props;
     return (
       <div>
         <input 
@@ -49,6 +55,11 @@ class JobAdd extends Component {
              className="jd-submit-button">
           Add job
         </div>
+        {message.content &&
+        <div className={message.success ? 'jd-success-message' : 'jd-fail-message' }>
+          {message.content}
+        </div>
+        }
       </div>
     );
   }
@@ -60,6 +71,7 @@ JobAdd.propTypes = {
 
 export default connect(state => {
   return {
-    dispatch: state.dispatch
+    dispatch: state.dispatch,
+    message: state.message
   }
 })(JobAdd);

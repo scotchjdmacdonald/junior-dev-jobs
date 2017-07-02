@@ -1,6 +1,6 @@
 import { call, put } from 'redux-saga/effects';
 import { getApiData, postApiData, patchApiData } from '../helpers/apiData';
-import { SET_JOBS } from '../constants/actions';
+import { SET_JOBS, SUCCESS_MESSAGE, FAIL_MESSAGE } from '../constants/actions';
 
 export function* fetchJobs() {
     const receivedData = yield call(getApiData, '/api/jobs');
@@ -23,4 +23,7 @@ export function* addJob(data) {
     const job = { title, description };
     const receivedData = yield call(postApiData, '/api/jobs', job);
     console.log('receivedData ', receivedData);
+    yield put({
+        type: receivedData._id ? SUCCESS_MESSAGE : FAIL_MESSAGE
+    });
 };
