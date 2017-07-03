@@ -26,7 +26,7 @@ class JobAdd extends Component {
 
   handleSubmit = (event) => {
     const { dispatch } = this.props;
-
+    
     dispatch({ type: ADD_JOB, payload: this.state });
 
     this.setState({

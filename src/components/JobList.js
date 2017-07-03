@@ -15,7 +15,7 @@ class JobList extends Component {
     const { jobs } = this.props;
     return (
       <div>
-          {jobs 
+          {jobs && jobs.length > 0
           ? jobs.map(job => {
             return <div key={job._id}
                         className="jd-job-list-item">
@@ -25,7 +25,7 @@ class JobList extends Component {
                      </Link>
                    </div>
           })
-          : <h2>no jobs listed</h2>}
+          : <div className="jd-subtle-heading">no jobs listed</div>}
       </div>
     );
   }
