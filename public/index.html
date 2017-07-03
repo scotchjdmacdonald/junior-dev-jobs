@@ -11,6 +11,7 @@
         max-width: 600px;
         margin: 0 auto;
         margin-top: 25px;
+        /*color: white;*/
       }
 
       header {
@@ -33,6 +34,24 @@
       .jd-job-list-item {
         display: inline-block;
         width: 100%;
+        background: #313440;
+        margin-bottom: 20px;
+        border-radius: 5px;
+      }
+
+      .jd-job-link {
+        display: inline-block;
+        width: 100%;
+        padding: 5px;
+        color: white;
+        text-decoration: none;
+        border-left: 0 solid #313440;
+        transition: border-left .1s ease;
+      }
+
+      .jd-job-link:hover {
+        border-left: 8px solid #69f0ae;
+        transition: border-left .1s ease;
       }
 
       input {

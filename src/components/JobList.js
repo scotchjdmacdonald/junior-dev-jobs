@@ -19,7 +19,8 @@ class JobList extends Component {
           ? jobs.map(job => {
             return <div key={job._id}
                         className="jd-job-list-item">
-                     <Link  to={`/jobs/view/${job._id}`}>
+                     <Link  to={`/jobs/view/${job._id}`}
+                            className="jd-job-link">
                        {job.title}
                      </Link>
                    </div>
