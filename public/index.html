@@ -26,9 +26,18 @@
         display: inline-block;
       }
 
-      .jd-button {
-        font-size: 1.5em;
+      .jd-nav-link {
+        /*font-size: 1.5em;*/
         display: inline-block;
+        color: #fbc02d;
+        text-decoration: none;
+        border-bottom: 5px solid transparent;
+        transition: border-bottom .5s ease;
+      }
+
+      .jd-nav-link:hover {
+        border-bottom: 5px solid #fbc02d;
+        transition: border-bottom .5s ease;
       }
 
       .jd-job-list-item {
@@ -36,7 +45,7 @@
         width: 100%;
         background: #313440;
         margin-bottom: 20px;
-        border-radius: 5px;
+        border-radius: 6px;
       }
 
       .jd-job-link {
@@ -50,7 +59,7 @@
       }
 
       .jd-job-link:hover {
-        border-left: 8px solid #69f0ae;
+        border-left: 8px solid #ea80fc;
         transition: border-left .1s ease;
       }
 
@@ -58,16 +67,48 @@
         font-size: 40px;
         font-family: 'Work Sans', sans-serif;
         margin-bottom: 25px;
+        width: 100%;
+        border: none;
+        border-bottom: 2px solid #313440;
       }
 
       .jd-success-message {
-        color: green;
+        color: #69f0ae;
         animation: fadeOut 2s;
       }
 
       .jd-fail-message {
-        color: red;
+        color: #ff5252;
         animation: fadeOut 2s;
+      }
+
+      .jd-submit-button {
+        margin-top: 15px;
+        margin-bottom: 30px;
+        /*font-size: 26px;*/
+        /*font-weight: 600;*/
+        -webkit-font-smoothing: antialiased;
+        border-radius: 45px;
+        border: none;
+        padding: 18px;
+        transition: all .1s ease;
+        color: rgba(255,255,255,1);
+        background-color: rgba(49,52,64,1);
+        cursor: pointer;
+        display: inline-block
+      }
+
+      .jd-submit-button:hover {
+        transform: scale(1.05);
+      }
+
+      .jd-job-view__heading {
+        font-size: .75em;
+        opacity: 0.25;
+      }
+
+      .jd-job-view__section {
+        margin-bottom: 30px;
       }
     </style>
   </head>

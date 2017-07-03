@@ -21,10 +21,10 @@ class JobView extends Component {
       <div>
           {job
           ? <div>
-              <div>Job title</div>
-              <div>{job.title}</div>
+              <div className="jd-job-view__heading">Title</div>
+              <div className="jd-job-view__section">{job.title}</div>
 
-              <div>Job description</div>
+              <div className="jd-job-view__heading">Description</div>
               <div>{job.description}</div>
             </div>
           : <div>No job found</div>

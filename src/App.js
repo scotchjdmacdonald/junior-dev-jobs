@@ -30,13 +30,15 @@ function Container(props) {
           Jobs
         </div>
         <Route path="/jobs/" render={() => (
-          <Link to={`/`}>
-            <div className="jd-button">back</div>
+          <Link to={`/`}
+                className="jd-nav-link">
+                back
           </Link>
         )} />
         <Route exact path="/" render={() => (
-          <Link to={`/jobs/add`}>
-            <div className="jd-button">Add</div>
+          <Link to={`/jobs/add`}
+                className="jd-nav-link">
+                Add
           </Link>
         )} />
       </header>
