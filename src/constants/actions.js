@@ -5,3 +5,4 @@ export const ADD_JOB = 'ADD_JOB';
 export const FAIL_MESSAGE = 'FAIL_MESSAGE';
 export const SUCCESS_MESSAGE = 'SUCCESS_MESSAGE';
 export const REMOVE_MESSAGE = 'REMOVE_MESSAGE';
+export const INCOMPLETE_MESSAGE = 'INCOMPLETE_MESSAGE';

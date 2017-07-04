@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { ADD_JOB, REMOVE_MESSAGE } from '../constants/actions';
+import { ADD_JOB, REMOVE_MESSAGE, INCOMPLETE_MESSAGE } from '../constants/actions';
 
 class JobAdd extends Component {
   constructor(props) {
@@ -27,7 +27,11 @@ class JobAdd extends Component {
   handleSubmit = (event) => {
     const { dispatch } = this.props;
     
-    dispatch({ type: ADD_JOB, payload: this.state });
+    if ((this.state.title === '') || (this.state.description === '')) {
+      dispatch({ type: INCOMPLETE_MESSAGE });
+    } else {
+      dispatch({ type: ADD_JOB, payload: this.state });
+    }
 
     this.setState({
       title: '',
