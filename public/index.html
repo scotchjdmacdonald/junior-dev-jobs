@@ -11,7 +11,6 @@
         max-width: 600px;
         margin: 0 auto;
         margin-top: 25px;
-        /*color: white;*/
       }
 
       header {
@@ -38,7 +37,6 @@
       }
 
       .jd-nav-link {
-        /*font-size: 1.5em;*/
         display: inline-block;
         color: #fbc02d;
         text-decoration: none;
@@ -74,7 +72,7 @@
         transition: border-left .1s ease;
       }
 
-      input {
+      input, textarea {
         font-size: 40px;
         font-family: 'Rubik', sans-serif;
         margin-bottom: 25px;
@@ -83,7 +81,7 @@
         border-bottom: 2px solid #313440;
       }
 
-      input::-webkit-input-placeholder {
+      input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
         opacity: .5;
       }
 
@@ -100,8 +98,6 @@
       .jd-submit-button {
         margin-top: 15px;
         margin-bottom: 30px;
-        /*font-size: 26px;*/
-        /*font-weight: 600;*/
         -webkit-font-smoothing: antialiased;
         border-radius: 45px;
         border: none;
@@ -124,6 +120,7 @@
 
       .jd-job-view__section {
         margin-bottom: 30px;
+        overflow-wrap: break-word;
       }
     </style>
   </head>

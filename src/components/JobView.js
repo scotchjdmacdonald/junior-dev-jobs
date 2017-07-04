@@ -25,7 +25,7 @@ class JobView extends Component {
               <div className="jd-job-view__section">{job.title}</div>
 
               <div className="jd-subtle-heading">Description</div>
-              <div>{job.description}</div>
+              <div className="jd-job-view__section">{job.description}</div>
             </div>
           : <div>No job found</div>
           }

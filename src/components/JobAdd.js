@@ -46,8 +46,7 @@ class JobAdd extends Component {
           value={this.state.title} 
           onChange={this.handleChange} />
       
-        <input 
-          type="text"
+        <textarea 
           name="description" 
           placeholder="description"
           value={this.state.description} 

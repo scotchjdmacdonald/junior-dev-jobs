@@ -21,9 +21,15 @@ export function* fetchSingleJob(data) {
 export function* addJob(data) {
     const { title, description } = data.payload;
     const job = { title, description };
-    const receivedData = yield call(postApiData, '/api/jobs', job);
-    console.log('receivedData ', receivedData);
-    yield put({
-        type: receivedData._id ? SUCCESS_MESSAGE : FAIL_MESSAGE
-    });
+    try {
+        const receivedData = yield call(postApiData, '/api/jobs', job);
+        yield put({
+            type: receivedData._id ? SUCCESS_MESSAGE : FAIL_MESSAGE
+        });
+    } catch (exception) {
+        console.log(exception);
+        yield put({
+            type: FAIL_MESSAGE
+        });
+    }
 };
