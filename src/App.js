@@ -41,7 +41,7 @@ function Container(props) {
         <Route exact path="/" render={() => (
           <Link to={`/jobs/add`}
                 className="jd-nav-link">
-                Add
+                add
           </Link>
         )} />
       </header>

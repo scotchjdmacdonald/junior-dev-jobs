@@ -42,20 +42,20 @@ class JobAdd extends Component {
         <input 
           type="text"
           name="title" 
-          placeholder="Title"
+          placeholder="title"
           value={this.state.title} 
           onChange={this.handleChange} />
       
         <input 
           type="text"
           name="description" 
-          placeholder="Description"
+          placeholder="description"
           value={this.state.description} 
           onChange={this.handleChange} />
         
         <div onClick={this.handleSubmit}
              className="jd-submit-button">
-          Add job
+          add job
         </div>
         {message.content &&
         <div className={message.success ? 'jd-success-message' : 'jd-fail-message' }>
