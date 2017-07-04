@@ -10,6 +10,8 @@ import JobList from './components/JobList.js';
 import JobView from './components/JobView.js';
 import JobAdd from './components/JobAdd.js';
 
+import juniorDevLogo from '../img/junior_dev_logo.png';
+
 let store = configureStore();
 
 const NoMatch = () => <h2>No match to the route</h2>;
@@ -26,8 +28,9 @@ function Container(props) {
   return (
     <div>
       <header>
-        <div className="jd-page-title">
-          Jobs
+        <div className="jd-title-container">
+          <img src={juniorDevLogo} />
+          <div className="jd-page-title">Jobs</div>
         </div>
         <Route path="/jobs/" render={() => (
           <Link to={`/`}

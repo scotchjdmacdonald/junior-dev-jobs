@@ -10,7 +10,7 @@ module.exports = {
     filename: 'app.bundle.js'
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
         loader: 'babel-loader',
@@ -18,6 +18,14 @@ module.exports = {
           presets: ['react', 'es2015', 'stage-2'],
           plugins: ['transform-object-assign']
         }
+      },
+      {
+        test: /\.(png|jpg|gif)$/,
+        use: [
+          {
+            loader: 'url-loader'
+          }
+        ]
       }
     ]
   },
