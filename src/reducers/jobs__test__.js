@@ -39,6 +39,10 @@ describe('jobs reducer ', () => {
 
         const result = jobs([], action);
 
-        expect(result).toEqual(action.payload);
+        expect(result).toEqual({
+                this: 'is my job',
+                there: 'are many like it',
+                but: 'this one is mine'
+            });
     });
 });
