@@ -11,7 +11,7 @@ script:
   - ./build/linux/build.sh
   - ./build/linux/test.sh
 before_deploy:
-  - rm -r ./src ./build ./node_modules 
+  - rm -r ./src ./node_modules 
   - rm README.md package-lock.json karma.config.js webpack.config.js
 deploy:
   provider: heroku
@@ -22,4 +22,4 @@ deploy:
   on:
     all_branches: true
 after_deploy:
-  - ./build/linux/smoke-test.sh https://$HEROKU_APPNAME.herokuapp.com
+  - ./build/linux/smoke-test.sh https://$HEROKU_APPNAME.herokuapp.com || travis_terminate 1;
